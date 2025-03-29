@@ -2,7 +2,7 @@ package com.project.aigrocery.models;
 
 import java.util.List;
 
-import com.project.aigrocery.models.produto.Categoria;
+import com.project.aigrocery.models.*;
 
 public class HistoricoComprasFormatter {
 
@@ -10,10 +10,10 @@ public class HistoricoComprasFormatter {
         StringBuilder sb = new StringBuilder();
         sb.append("O nosso usuário nos últimos 90 dias comprou:\n");
 
-        List<produto> compras = historico.get_produtos();
+        List<Produto> compras = historico.getProdutos();
         int index = 1;
 
-        for (produto p : compras) {
+        for (Produto p : compras) {
             sb.append(index).append("️ Nome: ").append(p.get_nome()).append("\n\n")
               .append("    Marca: ").append(p.get_marca()).append("\n\n")
               .append("    ID: ").append(p.get_id_prod()).append("\n\n")
@@ -31,7 +31,7 @@ public class HistoricoComprasFormatter {
         return sb.toString();
     }
 
-private static String formatarCategoria(Categoria categoria) {
+private static String formatarCategoria(Produto.Categoria categoria) {
     switch (categoria) {
         case FRESCOS:
             return "Frescos";

@@ -8,7 +8,7 @@ package com.project.aigrocery.models;
  *
  * @author diogo
  */
-public class produto{
+public class Produto{
     public enum Categoria{
         FRESCOS, 
         LACTICINIOS_E_OVOS, 
@@ -35,8 +35,7 @@ public class produto{
     private int tier_sustentavel; // de 1 a 5 sendo 1 insustentavel e 5 mais sustentavel
 
     //construtores
-
-    public produto(){
+    public Produto() {
         this.categoria = Categoria.GERAL;
         this.nome = "";
         this.marca = "";
@@ -50,7 +49,7 @@ public class produto{
         this.tier_sustentavel = 0;
     }
 
-    public produto(Categoria categoria, String nome, String marca, String id_prod, double preco, int quant_em_arm, int tier_saudavel, int tier_dieta, int tier_familiar, int tier_marca, int tier_sustentavel) {
+    public Produto(Categoria categoria, String nome, String marca, String id_prod, double preco, int quant_em_arm, int tier_saudavel, int tier_dieta, int tier_familiar, int tier_marca, int tier_sustentavel) {
         this.categoria = categoria;
         this.nome = nome;
         this.marca = marca;
@@ -64,7 +63,7 @@ public class produto{
         this.tier_sustentavel = tier_sustentavel;
     }
 
-    public produto(produto a){
+    public Produto(Produto a) {
         this.categoria = a.get_categoria();
         this.nome = a.get_nome();
         this.marca = a.get_marca();
@@ -77,6 +76,7 @@ public class produto{
         this.tier_marca = a.get_tier_marca();
         this.tier_sustentavel = a.get_tier_sustentavel();
     }
+
 
 
     //getters
@@ -173,8 +173,8 @@ public class produto{
 
     //funcoes uteis
     
-    public produto clone(produto a){
-        return new produto(a);
+    public Produto clone(Produto a){
+        return new Produto(a);
     }
 
     public String toString(){
@@ -194,7 +194,7 @@ public class produto{
     public boolean equals(Object o){
         if(this == o) return true;
         if((o == null) || (this.getClass() != o.getClass())) return false;
-        produto p = (produto) o;
+        Produto p = (Produto) o;
         return (this.categoria.equals(p.get_categoria()) && this.nome.equals(p.get_nome()) && this.marca.equals(p.get_marca()) && 
                 this.id_prod.equals(p.get_id_prod()) && this.preco == p.get_preco() && this.quant_em_arm == p.get_quant_arm() && 
                 this.tier_saudavel == p.get_tier_saudavel() && this.tier_dieta == p.get_tier_dieta() && this.tier_familiar == p.get_tier_familiar() && 
