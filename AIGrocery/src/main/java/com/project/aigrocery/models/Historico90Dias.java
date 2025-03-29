@@ -49,6 +49,17 @@ public class Historico90Dias {
         return historico30Dias;
     }
 
+    // Retorna a lista de datas de compra para um produto específico
+    public List<LocalDate> getDatasCompraPorProduto(produto p) {
+        List<LocalDate> datas = new ArrayList<>();
+        for (int i = 0; i < produtos.size(); i++) {
+            if (produtos.get(i).equals(p)) {
+                datas.add(datasCompra.get(i));
+            }
+        }
+        return datas;
+    }
+
     
     // Retorna a lista de produtos comprados
     public ArrayList<produto> getprodutos() {
