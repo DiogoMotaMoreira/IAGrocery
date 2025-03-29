@@ -36,6 +36,20 @@ public class Historico90Dias {
         }
     }
 
+    public Historico90Dias getHistoricoUltimos30Dias() { //retorna o historico dos ultimos 30 dias
+        Historico90Dias historico30Dias = new Historico90Dias();
+        LocalDate limite = LocalDate.now().minusDays(30);
+    
+        for (int i = 0; i < this.datasCompra.size(); i++) {
+            if (!this.datasCompra.get(i).isBefore(limite)) { // Se a data for dentro dos últimos 30 dias
+                historico30Dias.adicionarCompra(this.produtos.get(i), this.datasCompra.get(i));
+            }
+        }
+    
+        return historico30Dias;
+    }
+
+    
     // Retorna a lista de produtos comprados
     public ArrayList<produto> getprodutos() {
         return new ArrayList<>(produtos);
