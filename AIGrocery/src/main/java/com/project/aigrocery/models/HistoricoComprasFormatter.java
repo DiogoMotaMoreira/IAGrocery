@@ -31,7 +31,7 @@ public class HistoricoComprasFormatter {
         return sb.toString();
     }
 
-private static String formatarCategoria(Produto.Categoria categoria) {
+private static String formatarCategoria(Categoria categoria) {
     switch (categoria) {
         case FRESCOS:
             return "Frescos";
