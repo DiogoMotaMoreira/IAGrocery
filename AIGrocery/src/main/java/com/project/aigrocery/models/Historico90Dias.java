@@ -1,0 +1,84 @@
+package com.project.aigrocery.models;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Objects;
+
+public class Historico90Dias {
+    private ArrayList<produto> produtos;
+    private ArrayList<LocalDate> datasCompra;
+
+    public Historico90Dias() {
+        this.produtos = new ArrayList<>();
+        this.datasCompra = new ArrayList<>();
+    }
+
+    // Construtor com argumentos (recebe listas de produtos e datas)
+    public Historico90Dias(List<produto> produtos, List<LocalDate> datasCompra) {
+        this.produtos = new ArrayList<>(produtos);
+        this.datasCompra = new ArrayList<>(datasCompra);
+    }
+
+    // Construtor de cópia (clona um objeto Historico90Dias)
+    public Historico90Dias(Historico90Dias outro) {
+        this.produtos = new ArrayList<>(outro.produtos);
+        this.datasCompra = new ArrayList<>(outro.datasCompra);
+    }
+
+    // Adiciona uma compra ao histórico, garantindo que a data esteja nos últimos 90 dias
+    public void adicionarCompra(produto produto, LocalDate data) {
+        LocalDate limite = LocalDate.now().minusDays(90);
+        if (!data.isBefore(limite)) { // Só adiciona se a data for dentro dos últimos 90 dias
+            this.produtos.add(produto);
+            this.datasCompra.add(data);
+        }
+    }
+
+    // Retorna a lista de produtos comprados
+    public ArrayList<produto> getprodutos() {
+        return new ArrayList<>(produtos);
+    }
+
+    // Retorna a lista de datas das compras
+    public ArrayList<LocalDate> getDatasCompra() {
+        return new ArrayList<>(datasCompra);
+    }
+
+    // Remove compras que tenham mais de 90 dias
+    public void limparHistoricoAntigo() {
+        LocalDate limite = LocalDate.now().minusDays(90);
+        Iterator<LocalDate> dataIterator = datasCompra.iterator();
+        Iterator<produto> produtoIterator = produtos.iterator();
+
+        while (dataIterator.hasNext() && produtoIterator.hasNext()) {
+            LocalDate data = dataIterator.next();
+            produtoIterator.next();
+            if (data.isBefore(limite)) {
+                dataIterator.remove();
+                produtoIterator.remove();
+            }
+        }
+    }
+
+    // Exibe o histórico de compras formatado
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("Histórico de Compras (últimos 90 dias):\n");
+        for (int i = 0; i < produtos.size(); i++) {
+            sb.append(datasCompra.get(i)).append(" - ").append(produtos.get(i).get_nome()).append("\n");
+        }
+        return sb.toString();
+    }
+
+    // Método equals()
+    @Override
+    public boolean equals(Object obj) {
+    if (this == obj) return true;
+    if (obj == null || getClass() != obj.getClass()) return false;
+    Historico90Dias that = (Historico90Dias) obj;
+    return Objects.equals(produtos, that.produtos) &&
+               Objects.equals(datasCompra, that.datasCompra);
+    }
+}

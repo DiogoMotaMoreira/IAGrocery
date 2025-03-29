@@ -19,7 +19,7 @@ public class produto{
         DOCES_E_SOBREMESAS, 
         SNACKS_E_PETISCOS, 
         TEMPEROS_E_CONDIMENTOS, 
-        CONGELADOS;
+        CONGELADOS,
         GERAL;
     }
     private String nome;
@@ -70,7 +70,7 @@ public class produto{
         this.marca = a.get_marca();
         this.id_prod = a.get_id_prod();
         this.preco = a.get_preco();
-        this.quant_em_arm = a.get_quant_em_arm();
+        this.quant_em_arm = a.get_quant_arm();
         this.tier_saudavel = a.get_tier_saudavel();
         this.tier_dieta = a.get_tier_dieta();
         this.tier_familiar = a.get_tier_familiar();
@@ -127,7 +127,7 @@ public class produto{
 
     //setters
 
-    public void set_categoria(String categoria){
+    public void set_categoria(Categoria categoria){
         this.categoria = categoria;
     }
 
@@ -196,7 +196,7 @@ public class produto{
         if((o == null) || (this.getClass() != o.getClass())) return false;
         produto p = (produto) o;
         return (this.categoria.equals(p.get_categoria()) && this.nome.equals(p.get_nome()) && this.marca.equals(p.get_marca()) && 
-                this.id_prod.equals(p.get_id_prod()) && this.preco == p.get_preco() && this.quant_em_arm == p.get_quant_em_arm() && 
+                this.id_prod.equals(p.get_id_prod()) && this.preco == p.get_preco() && this.quant_em_arm == p.get_quant_arm() && 
                 this.tier_saudavel == p.get_tier_saudavel() && this.tier_dieta == p.get_tier_dieta() && this.tier_familiar == p.get_tier_familiar() && 
                 this.tier_marca == p.get_tier_marca() && this.tier_sustentavel == p.get_tier_sustentavel());
     }
