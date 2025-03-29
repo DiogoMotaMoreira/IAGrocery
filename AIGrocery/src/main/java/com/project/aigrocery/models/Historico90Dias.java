@@ -62,7 +62,7 @@ public class Historico90Dias {
 
     
     // Retorna a lista de produtos comprados
-    public ArrayList<produto> getprodutos() {
+    public ArrayList<produto> get_produtos() {
         return new ArrayList<>(produtos);
     }
 
