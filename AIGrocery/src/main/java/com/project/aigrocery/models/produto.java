@@ -9,7 +9,7 @@ package com.project.aigrocery.models;
  * @author diogo
  */
 public class produto{
-    private enum Categoria{
+    public enum Categoria{
         FRESCOS, 
         LACTICINIOS_E_OVOS, 
         CARNES_E_PROTEINAS, 
