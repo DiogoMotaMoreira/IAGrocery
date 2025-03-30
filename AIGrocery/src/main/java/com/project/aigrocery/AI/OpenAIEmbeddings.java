@@ -7,11 +7,7 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
-import java.util.Scanner;
 import java.util.regex.Pattern;
-
-import ch.qos.logback.core.boolex.Matcher;
 
 public class OpenAIEmbeddings {
 

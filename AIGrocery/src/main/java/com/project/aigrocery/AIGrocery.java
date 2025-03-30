@@ -7,25 +7,24 @@
  import org.springframework.boot.CommandLineRunner;
  import org.springframework.boot.SpringApplication;
  import org.springframework.boot.autoconfigure.SpringBootApplication;
- import org.springframework.beans.factory.annotation.Autowired;
+
+import java.sql.SQLException;
+
+import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.context.annotation.Configuration;
  
- import javax.sql.DataSource;
- import java.sql.Connection;
- import java.sql.SQLException;
+ import com.project.aigrocery.modelsDAO.Banco;
  
- @SpringBootApplication
- @Configuration
- public class AIGrocery implements CommandLineRunner {
-     public static void main(String[] args) {
-         SpringApplication.run(AIGrocery.class, args);
-     }
-     @Override
-     public void run(String... args) throws Exception {
-         try {
-             DataBaseConfig.ConnectBD();
-         } catch (ClassNotFoundException | SQLException e) {
-             System.out.println("Error during database connection: " + e.getMessage());
-         }
-     }
- }
+@SpringBootApplication
+@Configuration
+public class AIGrocery {
+
+   @Autowired
+   private Banco banco;
+
+   public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        Banco banco = new Banco();
+        banco.inicia();
+        
+   }
+}

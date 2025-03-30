@@ -1,8 +1,6 @@
 package com.project.aigrocery.models;
 
 import java.util.List;
-import com.project.aigrocery.models.PromocoesExistentes;
-import com.project.aigrocery.models.Promocao;
 
 public class PromocoesFormatter {
 

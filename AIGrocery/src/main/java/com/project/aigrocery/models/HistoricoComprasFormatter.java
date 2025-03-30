@@ -2,8 +2,6 @@ package com.project.aigrocery.models;
 
 import java.util.List;
 
-import com.project.aigrocery.models.*;
-
 public class HistoricoComprasFormatter {
 
     public static String formatarHistorico(Historico90Dias historico) {

@@ -1,6 +1,5 @@
 package com.project.aigrocery.models;
 
-import com.project.aigrocery.models.Promocao;
 import java.util.ArrayList;
 
 public class PromocoesExistentes {
