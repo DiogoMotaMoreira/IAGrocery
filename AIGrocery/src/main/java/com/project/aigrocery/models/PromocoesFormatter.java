@@ -36,7 +36,7 @@ public class PromocoesFormatter {
     }
 
     // Formatar a categoria
-    private static String formatarCategoria(Promocao.Categoria categoria) {
+    private static String formatarCategoria(Categoria categoria) {
         switch (categoria) {
             case FRESCOS:
                 return "Frescos";

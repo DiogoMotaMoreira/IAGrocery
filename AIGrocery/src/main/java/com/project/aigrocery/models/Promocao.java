@@ -1,19 +1,7 @@
 package com.project.aigrocery.models;
 
 public class Promocao{
-    public enum Categoria{
-        FRESCOS, 
-        LACTICINIOS_E_OVOS, 
-        CARNES_E_PROTEINAS, 
-        GRAOS_E_CEREAIS, 
-        PAES_E_PANIFICACAO, 
-        BEBIDAS, 
-        DOCES_E_SOBREMESAS, 
-        SNACKS_E_PETISCOS, 
-        TEMPEROS_E_CONDIMENTOS, 
-        CONGELADOS,
-        GERAL;
-    }
+   
     private String nome;
     private String marca;
     private String id_prod;
@@ -207,6 +195,22 @@ public class Promocao{
                 "Tier Marca: " + this.tier_marca + "\n" +
                 "Tier Sustentável: " + this.tier_sustentavel + "\n" +
                 "Descrição da Promoção: " + this.descricao_promocao + "\n" +
+                "Data Final: " + this.data_final);
+    }
+
+    public String toStringJ(){
+        return("Produto: " + this.nome +
+                "Categoria: " + this.categoria +
+                "Marca: " + this.marca +
+                "ID: " + this.id_prod +
+                "Preço: " + this.preco +
+                "Quantidade em Armazém: " + this.quant_em_arm +
+                "Tier Saudável: " + this.tier_saudavel +
+                "Tier Dieta: " + this.tier_dieta +
+                "Tier Familiar: " + this.tier_familiar +
+                "Tier Marca: " + this.tier_marca +
+                "Tier Sustentável: " + this.tier_sustentavel +
+                "Descrição da Promoção: " + this.descricao_promocao +
                 "Data Final: " + this.data_final);
     }
 

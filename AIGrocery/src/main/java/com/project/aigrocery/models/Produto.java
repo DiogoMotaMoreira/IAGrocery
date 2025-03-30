@@ -175,7 +175,21 @@ public class Produto{
                 "Tier Dieta: " + this.tier_dieta + "\n" +
                 "Tier Familiar: " + this.tier_familiar + "\n" +
                 "Tier Marca: " + this.tier_marca + "\n" +
-                "Tier Sustentável: " + this.tier_sustentavel);
+                "Tier Sustentável: " + this.tier_sustentavel)+ " ";
+    }
+
+    public String toStringJ(){
+        return("Produto: " + this.nome +
+                "Categoria: " + this.categoria + 
+                "Marca: " + this.marca +
+                "ID: " + this.id_prod +
+                "Preço: " + this.preco +
+                "Quantidade em Armazém: " + this.quant_em_arm +
+                "Tier Saudável: " + this.tier_saudavel +
+                "Tier Dieta: " + this.tier_dieta +
+                "Tier Familiar: " + this.tier_familiar +
+                "Tier Marca: " + this.tier_marca +
+                "Tier Sustentável: " + this.tier_sustentavel)+ " ";
     }
 
     public boolean equals(Object o){

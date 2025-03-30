@@ -19,27 +19,9 @@ public class OpenAIEmbeddings {
     private static final String API_URL = "https://apps.aws-london-novaprd1.svc.singlestore.com:8000/modelasaservice/84b479c4-7f9a-42df-840a-e01906afb790/v1/embeddings";
 
 
-     public static void main(String[] args) throws Exception {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Digite a primeira pergunta: ");
-        String pergunta1 = scanner.nextLine();
-        
-        System.out.print("Digite a segunda pergunta: ");
-        String pergunta2 = scanner.nextLine();
-        
-        double[] embedding1 = getEmbedding(pergunta1);
-        double[] embedding2 = getEmbedding(pergunta2);
-        
-        if (embedding1 != null && embedding2 != null) {
-            double similarity = cosineSimilarity(embedding1, embedding2);
-            System.out.printf("Similaridade do cosseno: %.4f\n", similarity);
-        } else {
-            System.out.println("Erro ao obter embeddings.");
-        }
-    }
+     
 
-    private static double[] getEmbedding(String input) throws IOException {
+    public static double[] getEmbedding(String input) throws IOException {
         URL url = new URL(API_URL + "?authToken=" + API_KEY);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         
@@ -65,8 +47,8 @@ public class OpenAIEmbeddings {
             while ((responseLine = br.readLine()) != null) {
                 response.append(responseLine.trim());
             }
-            System.out.println(response.toString());
-            System.out.println("----------------------------------------------------------------------------------------------");
+            //System.out.println(response.toString());
+            //System.out.println("----------------------------------------------------------------------------------------------");
             return parseEmbedding(response.toString());
         }
         
@@ -92,7 +74,7 @@ public class OpenAIEmbeddings {
         return null;
     }
 
-    private static double cosineSimilarity(double[] vec1, double[] vec2) {
+    public static double cosineSimilarity(double[] vec1, double[] vec2) {
         double dotProduct = 0.0;
         double normVec1 = 0.0;
         double normVec2 = 0.0;
