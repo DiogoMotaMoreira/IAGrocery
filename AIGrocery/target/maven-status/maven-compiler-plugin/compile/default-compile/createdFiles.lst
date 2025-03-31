@@ -1,4 +1,5 @@
 com\project\aigrocery\modelsDAO\ProdutosDAO.class
+com\project\aigrocery\Teste.class
 com\project\aigrocery\modelsDAO\Banco.class
 com\project\aigrocery\AI\Recomendation.class
 com\project\aigrocery\view\inicio$1.class
@@ -10,8 +11,13 @@ com\project\aigrocery\models\HistoricoComprasFormatter$1.class
 com\project\aigrocery\DataBaseConfig.class
 com\project\aigrocery\models\Produto.class
 com\project\aigrocery\models\PromocoesFormatter.class
+com\project\aigrocery\models\Users.class
+com\project\aigrocery\view\AIGroceryApp$1.class
 com\project\aigrocery\models\PromocoesFormatter$1.class
 com\project\aigrocery\models\PromocoesExistentes.class
 com\project\aigrocery\models\Promocao.class
+com\project\aigrocery\view\AIGroceryApp$2.class
 com\project\aigrocery\AI\OpenAIEmbeddings.class
 com\project\aigrocery\view\inicio.class
+com\project\aigrocery\view\AIGroceryApp.class
+com\project\aigrocery\view\AIGroceryApp$DashedBorder.class

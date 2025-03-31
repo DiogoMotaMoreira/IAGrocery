@@ -4,27 +4,28 @@
 
  package com.project.aigrocery;
 
- import org.springframework.boot.CommandLineRunner;
- import org.springframework.boot.SpringApplication;
  import org.springframework.boot.autoconfigure.SpringBootApplication;
+ import java.util.Scanner;
+
+
 
 import java.sql.SQLException;
 
 import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.context.annotation.Configuration;
- 
- import com.project.aigrocery.modelsDAO.Banco;
+
+import com.project.aigrocery.AI.Recomendation;
+import com.project.aigrocery.modelsDAO.Banco;
  
 @SpringBootApplication
-@Configuration
 public class AIGrocery {
 
    @Autowired
-   private Banco banco;
+   public static Banco banco;
 
-   public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        Banco banco = new Banco();
-        banco.inicia();
+   public static void main(String[] args)  {
+      banco = new Banco();
         
+        //testeApresentacao();
    }
 }

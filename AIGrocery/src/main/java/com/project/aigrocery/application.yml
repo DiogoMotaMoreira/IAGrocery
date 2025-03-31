@@ -1,0 +1,12 @@
+spring:
+  profiles: "dev2"
+  datasource:
+    url: >-
+         jdbc:mysql://localhost:3306/db_ctrlaltf_afa20?
+         sslMode=VERIFY_CA&
+         trustCertificateKeyStoreUrl=file:/<project-path>/mysql-server/certs/truststore.jks&
+         trustCertificateKeyStorePassword=MFOzVahmFDA07igFYpjj8yqmiSmybUV2&
+         clientCertificateKeyStoreUrl=file:/<project-path>/mysql-server/certs/client-cert.jks&
+         clientCertificateKeyStorePassword=MFOzVahmFDA07igFYpjj8yqmiSmybUV2
+    username: ctrlaltf4-bdf2c
+    password: MFOzVahmFDA07igFYpjj8yqmiSmybUV2

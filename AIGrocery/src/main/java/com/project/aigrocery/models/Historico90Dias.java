@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Historico90Dias {
+    private int id;
     private ArrayList<Produto> produtos;
     private ArrayList<LocalDate> datasCompra;
 
@@ -16,18 +17,30 @@ public class Historico90Dias {
     }
 
     // Construtor com argumentos (recebe listas de produtos e datas)
-    public Historico90Dias(List<Produto> produtos, List<LocalDate> datasCompra) {
+    public Historico90Dias(int id,List<Produto> produtos, List<LocalDate> datasCompra) {
+        this.id = id;
         this.produtos = new ArrayList<>(produtos);
         this.datasCompra = new ArrayList<>(datasCompra);
     }
 
     // Construtor de cópia (clona um objeto Historico90Dias)
     public Historico90Dias(Historico90Dias outro) {
+        this.id = outro.id;
         this.produtos = new ArrayList<>(outro.produtos);
         this.datasCompra = new ArrayList<>(outro.datasCompra);
     }
 
     // Adiciona uma compra ao histórico, garantindo que a data esteja nos últimos 90 dias
+    public void adicionarCompraArray(ArrayList<Produto> produtos, ArrayList<LocalDate> datas) {
+        LocalDate limite = LocalDate.now().minusDays(90);
+        for (int i = 0; i < produtos.size(); i++) {
+            if (!datas.get(i).isBefore(limite)) { // Só adiciona se a data for dentro dos últimos 90 dias
+                this.produtos.add(produtos.get(i));
+                this.datasCompra.add(datas.get(i));
+            }
+        }
+    }
+
     public void adicionarCompra(Produto produto, LocalDate data) {
         LocalDate limite = LocalDate.now().minusDays(90);
         if (!data.isBefore(limite)) { // Só adiciona se a data for dentro dos últimos 90 dias
@@ -60,6 +73,16 @@ public class Historico90Dias {
         return datas;
     }
 
+    // Getter para o ID
+    public int getId() {
+        return id;
+    }
+
+    // Setter para o ID
+    public void setId(int id) {
+        this.id = id;
+    }
+
     // Retorna a lista de produtos comprados
     public ArrayList<Produto> getProdutos() {
         return new ArrayList<>(produtos);
@@ -90,8 +113,10 @@ public class Historico90Dias {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Histórico de Compras (últimos 90 dias):\n");
-        for (int i = 0; i < produtos.size(); i++) {
-            sb.append(datasCompra.get(i)).append(" - ").append(produtos.get(i).get_nome()).append("\n");
+        int i=0;
+        for (Produto produto : produtos) {
+            sb.append(datasCompra.get(i)).append(" - ").append(produto.get_nome()).append("\n");
+            i++;
         }
         return sb.toString();
     }

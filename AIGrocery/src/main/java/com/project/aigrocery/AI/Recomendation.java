@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class Recomendation {
 
-    public static void main(String[] args) throws IOException {
+    /*public static void main(String[] args) throws IOException {
         // Criar alguns produtos fictícios
         List<LocalDate> datasCompra = new ArrayList<>();
         datasCompra.add(LocalDate.now().minusDays(10)); // Compra há 10 dias
@@ -42,7 +42,7 @@ public class Recomendation {
         // Criar histórico de compras com produtos fictícios
         List<Produto> produtosComprados = Arrays.asList(p1, p2, p1, p3, p2, p1, p4, p5, p3, p2, p5, p5, p4, p2, p1, p3);
         
-        Historico90Dias historico = new Historico90Dias(produtosComprados, datasCompra);
+        Historico90Dias historico = new Historico90Dias(0,produtosComprados, datasCompra);
         
 
         // Criar promoções
@@ -94,21 +94,21 @@ public class Recomendation {
         
         // Verificar produtos que precisam de promoção
         //indica quais produtos foi reduzida a compra
-        List<Produto> produtosParaPromocao = recomendation.produtosNecessitamPromocao(historico);
+        List<Produto> produtosParaPromocao = Recomendation.produtosNecessitamPromocao(historico);
         for(Produto produto : produtosParaPromocao) {
             System.out.println("Produto que necessita de promoção: " + produto.get_nome());
         }
 
         //opções:
         //1. veriifcar itens associados que tenham promoção
-        List<String> produtosComPromocao = recomendation.produtosSimilaresComPromocao(produtosParaPromocao, promocoesList);
+        List<String> produtosComPromocao = Recomendation.produtosSimilaresComPromocao(produtosParaPromocao, promocoesList);
         for(String produto : produtosComPromocao) {
             System.out.println("Produto com promoção similares: " + produto);
         }
-    }
+    }*/
 
     
-    public List<String> produtosSimilaresComPromocao(List<Produto> produtos, PromocoesExistentes promocoes) throws IOException {
+    public static List<String> produtosSimilaresComPromocao(List<Produto> produtos, PromocoesExistentes promocoes) throws IOException {
         List<String> produtosComPromocao = new ArrayList<>();
 
         for (Produto produto : produtos) {
@@ -162,7 +162,7 @@ public class Recomendation {
 
     
     
-    public List<Produto> produtosNecessitamPromocao(Historico90Dias historico) {
+    public static List<Produto> produtosNecessitamPromocao(Historico90Dias historico) {
         LocalDate hoje = LocalDate.now();
         LocalDate inicioUltimos30 = hoje.minusDays(30);
         LocalDate inicioPeriodoAnterior = hoje.minusDays(90);
