@@ -38,11 +38,11 @@ Durante a **Hackathon 2025 - BugsByte Braga**, desenvolvemos uma aplicação ino
 
 ## 🧑‍💻 Equipa Ctrl+Alt+F4
 
-- 👨‍💻 Diogo Moreira – [@github1](https://github.com/DiogoMotaMoreira)
-- 👨‍💻 Zé Rafael  – [@github2](https://github.com/Rafas28)
-- 👨‍💻 Zé Miguel  – [@github3]()
-- 👨‍💻 Rafael Silva – [@github4](https://github.com/rafasmsilva17)
-- 👨‍💻 Nuno Mendes – [@github5](https://github.com/NGMB17)
+- 👨‍💻 Diogo Moreira – [DiogoMotaMoreira](https://github.com/DiogoMotaMoreira)
+- 👨‍💻 Zé Rafael  – [Rafas28](https://github.com/Rafas28)
+- 👨‍💻 Zé Miguel  – [Zé Miguel]()
+- 👨‍💻 Rafael Silva – [rafasmsilva17](https://github.com/rafasmsilva17)
+- 👨‍💻 Nuno Mendes – [NGMB17](https://github.com/NGMB17)
 
 
 > *Mais do que código, criámos uma solução real para um problema real.*
