@@ -51,8 +51,6 @@ Durante a **Hackathon 2025 - BugsByte Braga**, desenvolvemos uma aplicação ino
 
 <!-- ## 📷 Demonstração (opcional) -->
 
----
-
 ## 🤝 Contribuições
 
 Este projeto foi desenvolvido como parte de uma hackathon, mas está aberto a contribuições futuras!  
